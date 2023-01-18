@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "pdt3V5LESK0cLSrEMtZ8+054ydmopTzH5/UP2SjXAtKkHm5/KbTzJ3GMkLlJwjfeY14z2SXzP3cDGZmcFJStdw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Fyuke\\Documents\\Bullfighting Game\\Bullfighting Game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Fyuke\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\Fyuke\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
