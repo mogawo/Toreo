@@ -19,6 +19,9 @@ public class MatadorMovement : KinematicBody2D
 
     PackedScene afterImageScene = GD.Load<PackedScene>("res://AfterImage.tscn");
 
+    //Used for the UI to get accurate times
+    static public float dashCD; 
+
     public override void _Ready()
     {
         recoveryTimer = new Timer();
@@ -34,6 +37,8 @@ public class MatadorMovement : KinematicBody2D
 
         AddChild(recoveryTimer);
         AddChild(dashTimer);
+
+        dashCD = dashCooldown;
     }
 
     public override void _PhysicsProcess(float delta)
@@ -45,8 +50,9 @@ public class MatadorMovement : KinematicBody2D
     {
         AfterImage aft = afterImageScene.Instance<AfterImage>();
         AddChild(aft);
-        aft.SetAsToplevel(true);
         aft.Transform = Transform;
+        aft.SetAsToplevel(true);
+        
     }
 
     private void matadorMove(float delta)

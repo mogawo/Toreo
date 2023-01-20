@@ -62,6 +62,10 @@ dash={
  ]
 }
 
+[mono]
+
+project/assembly_name="Bullfighting Game"
+
 [physics]
 
 common/enable_pause_aware_picking=true
