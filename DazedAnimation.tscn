@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Animation/DazedEffect/DazedEffect_1.png" type="Texture" id=1]
+[ext_resource path="res://Animation/DazedEffect/DazedEffect_4.png" type="Texture" id=2]
+[ext_resource path="res://Animation/DazedEffect/DazedEffect_3.png" type="Texture" id=3]
+[ext_resource path="res://Animation/DazedEffect/DazedEffect_2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Dazed",
+"speed": 5.0
+} ]
+
+[node name="DazedAnimation" type="AnimatedSprite"]
+z_index = 5
+frames = SubResource( 2 )
+frame = 2
+speed_scale = 2.0

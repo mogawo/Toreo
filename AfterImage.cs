@@ -20,7 +20,7 @@ public class AfterImage : Node2D
     Texture texture;
 
     [Export]
-    float lifetime, opacity;
+    float lifetime = 1;
 
     static public int allowedExisting = 7;
 
@@ -31,6 +31,9 @@ public class AfterImage : Node2D
 
     public override void _Ready()
     {
+        timer = GetNode<Timer>("Timer");
+        timer.WaitTime = lifetime;
+        timer.Start();
         currExisting++;
         if (colorIndex >= pallete.Length)
         {
@@ -54,15 +57,9 @@ public class AfterImage : Node2D
 
     public override void _Process(float delta)
     {
-        
         if(timer.IsStopped())
         {
             QueueFree();
         }
-    }
-
-    public static bool isMaxedExisitng()
-    {
-        return currExisting == allowedExisting;
     }
 }

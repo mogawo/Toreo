@@ -1,22 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Unpressed-Shift-Key.png" type="Texture" id=1]
 [ext_resource path="res://UI/Pressed-Shift-Key.png" type="Texture" id=2]
-[ext_resource path="res://UI/ShiftKeyUI.cs" type="Script" id=3]
+[ext_resource path="res://UI/UIScript.cs" type="Script" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float alpha = 1;
+void fragment()
+{
+	COLOR = texture(TEXTURE, UV);
+	COLOR.a *= alpha;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/alpha = 1.0
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource( 3 )
 
 [node name="ShiftKeyUI" type="TextureButton" parent="."]
-margin_left = 132.0
-margin_top = 437.0
-margin_right = 180.0
-margin_bottom = 469.0
+material = SubResource( 2 )
+margin_left = 75.0
+margin_top = 450.0
+margin_right = 123.0
+margin_bottom = 482.0
 rect_scale = Vector2( 3, 3 )
 size_flags_vertical = 0
-toggle_mode = true
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 2 )
-script = ExtResource( 3 )
 
 [node name="DashCooldown" type="Timer" parent="ShiftKeyUI"]
 one_shot = true

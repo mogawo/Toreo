@@ -1,16 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Matador.png" type="Texture" id=1]
-[ext_resource path="res://MatadorMovement.cs" type="Script" id=2]
+[ext_resource path="res://Matador.cs" type="Script" id=2]
 [ext_resource path="res://UI/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DazedAnimation.tscn" type="PackedScene" id=4]
+[ext_resource path="res://dungeon_ v1.0/Health Orb.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 22.0
 
 [node name="Matador" type="KinematicBody2D"]
+position = Vector2( 0, -18 )
 script = ExtResource( 2 )
-movementSpeed = 200.0
-accel = 10.0
-dashMultiplier = 50.0
-timeToRecover = 0.4
-dashCooldown = 1.0
+
+[node name="StatusEffect" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 0, -16 )
+animation = "Dazed"
+frame = 0
 
 [node name="MatadorSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -22,6 +30,13 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -5, 19, 5, 19, 5, 15, -5, 15 )
+polygon = PoolVector2Array( -8, 19, 9, 19, 9, 15, -8, 15 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Health Orb" parent="." instance=ExtResource( 5 )]
