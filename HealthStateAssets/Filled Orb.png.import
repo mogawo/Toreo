@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Half Orb.png-ab55e078dfa576249aff99ff422b9e22.stex"
+path="res://.import/Filled Orb.png-2e45b0848334208377c2558dbe90c117.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Health Orb/Half Orb.png"
-dest_files=[ "res://.import/Half Orb.png-ab55e078dfa576249aff99ff422b9e22.stex" ]
+source_file="res://HealthStateAssets/Filled Orb.png"
+dest_files=[ "res://.import/Filled Orb.png-2e45b0848334208377c2558dbe90c117.stex" ]
 
 [params]
 

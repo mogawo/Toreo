@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public class HealthOrb : Node2D
+public class HealthOrb : Control
 {
     Sprite[] orbSprites = new Sprite[4];
     int state;
-    const int full = 0, half = 1, empty = 2;
+    public const int FULL = 0, HALF = 1, EMPTY = 2;
     public override void _Ready()
     {
         Godot.Collections.Array gArray = GetChildren();
@@ -19,21 +19,26 @@ public class HealthOrb : Node2D
     {
         switch(state)
         {
-            case empty:
+            case EMPTY:
                 orbSprites[1].Visible = false;
                 orbSprites[2].Visible = false;
                 break;
-            case half:
+            case HALF:
                 orbSprites[1].Visible = true;
                 orbSprites[2].Visible = false;
                 break;
-            case full:
+            case FULL:
                 orbSprites[1].Visible = false;
                 orbSprites[2].Visible = true;
                 break;
             default:
                 break;
         }
+    }
+
+    public void ChangeState(int newState)
+    {
+        state = newState;
     }
 
     public void crack(bool toCrack = true)
@@ -45,13 +50,13 @@ public class HealthOrb : Node2D
     {
         switch(state)
         {
-            case full:
-                state = half;
+            case FULL:
+                state = HALF;
                 break;
-            case half:
-                state = empty;
+            case HALF:
+                state = EMPTY;
                 break;
-            case empty:
+            case EMPTY:
                 crack();
                 break;
         }
@@ -61,12 +66,17 @@ public class HealthOrb : Node2D
     {
         switch(state)
         {
-            case half:
-                state = full;
+            case HALF:
+                state = FULL;
                 break;
-            case empty:
-                state = half;
+            case EMPTY:
+                state = HALF;
                 break;
         }
+    }
+
+    public bool isEmpty()
+    {
+        return state == EMPTY;
     }
 }

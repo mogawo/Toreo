@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Filled Orb.png-ac59597e9fe46cb5fcbb01e28c468765.stex"
+path="res://.import/Cracked Orb.png-4d91d20f54539a05b873b551317efccf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Health Orb/Filled Orb.png"
-dest_files=[ "res://.import/Filled Orb.png-ac59597e9fe46cb5fcbb01e28c468765.stex" ]
+source_file="res://HealthStateAssets/Cracked Orb.png"
+dest_files=[ "res://.import/Cracked Orb.png-4d91d20f54539a05b873b551317efccf.stex" ]
 
 [params]
 
