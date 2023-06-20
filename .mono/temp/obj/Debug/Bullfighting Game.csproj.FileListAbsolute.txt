@@ -7,3 +7,12 @@ C:\Users\Fyuke\Documents\Bullfighting Game\.mono\temp\obj\Debug\Bullfighting Gam
 C:\Users\Fyuke\Documents\Bullfighting Game\.mono\temp\obj\Debug\Bullfighting Game.csproj.CoreCompileInputs.cache
 C:\Users\Fyuke\Documents\Bullfighting Game\.mono\temp\obj\Debug\Bullfighting Game.dll
 C:\Users\Fyuke\Documents\Bullfighting Game\.mono\temp\obj\Debug\Bullfighting Game.pdb
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\bin\Debug\Bullfighting Game.dll
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\bin\Debug\Bullfighting Game.pdb
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.csproj.AssemblyReference.cache
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.AssemblyInfoInputs.cache
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.AssemblyInfo.cs
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.csproj.CoreCompileInputs.cache
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.dll
+C:\Users\Fyuke\Documents\Toreo\.mono\temp\obj\Debug\Bullfighting Game.pdb

@@ -7,10 +7,12 @@ public class Matador : KinematicBody2D
     float movementSpeed = 200, movementSmoothing = 0.1f, dashMultiplier = 50, speedMultiplier = 1;
 
     [Export]
-    float timeToRecover = 0.3f, dashCooldown = 2;
+    float timeToRecover = 0.3f, dashCooldown = 2, shakeAmount = 0.2f;
 
     [Export]
-    int distanceToSpawns = 4;
+    int distanceToSpawns = 4, shakePower = 50, maxShakes = 1;
+
+    int currShakes = 0;
 
     public bool canDash = true;
     bool canSpawn = false;
@@ -23,6 +25,12 @@ public class Matador : KinematicBody2D
     PackedScene afterImageScene = GD.Load<PackedScene>("res://AfterImage.tscn");
 
     AnimatedSprite statusEffect;
+
+    HealthBar hpBar;
+
+    Camera2D camera;
+
+    Random rand = new Random();
 
     static public float dashCD;
 
@@ -37,8 +45,8 @@ public class Matador : KinematicBody2D
         stunTimer.WaitTime = timeToRecover;
         dashTimer.WaitTime = dashCooldown;
 
-        stunTimer.OneShot = true;
-        dashTimer.OneShot = true;
+        stunTimer.OneShot  = true;
+        dashTimer.OneShot  = true;
 
         AddChild(dashTimer);
         AddChild(stunTimer);
@@ -46,11 +54,25 @@ public class Matador : KinematicBody2D
         dashCD = dashCooldown;
 
         statusEffect = GetChild<AnimatedSprite>(0);
+
+        hpBar = GetNode<HealthBar>("CenterContainer/HealthBar");
+
+        camera = GetNode<Camera2D>("Camera2D");
     }
 
     public override void _PhysicsProcess(float delta)
     {
         matadorMove(delta);
+        if(currShakes < maxShakes)
+        {
+            screenShake();
+            currShakes++;
+        }
+        else 
+        {
+            camera.Offset = camera.Offset.LinearInterpolate(Vector2.Zero, 0.5f);
+            camera.Rotation *= 0.95f;
+        }
     }
 
     private void dashAfterImages(float delta)
@@ -123,5 +145,16 @@ public class Matador : KinematicBody2D
         stunTimer.Start();
         statusEffect.Visible = true;
         statusEffect.Playing = true;
+    }
+
+    public void takeDamage(int dmgPoints)
+    {
+        hpBar.takeDamage(dmgPoints);
+        currShakes = 0;
+    }
+
+    void screenShake()
+    {
+        
     }
 }

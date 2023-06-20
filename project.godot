@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "CollisionPolygon2D",
 "class": "DonutCollisionPolygon2D",
 "language": "GDScript",
 "path": "res://addons/godot-donut-collision-polygon-2d-04787cbc1a76677a1c6721fed8d1137071a3a515/addons/donut_collision_polygon2D/donut_collision_polygon2D.gd"
@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Bullfighting Game"
+config/name="Toreo"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 

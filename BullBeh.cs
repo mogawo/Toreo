@@ -21,6 +21,10 @@ public class BullBeh : KinematicBody2D
             Vector2 pushDir = GlobalTransform.origin.DirectionTo(matador.GlobalTransform.origin);
             matador.impulsePush(pushDir, matador.velocity.Length() + pushForce * pushScale);
             matador.stun(matadorStunTime);
+
+            matador.takeDamage(1);
         }
+
+
     }
 }

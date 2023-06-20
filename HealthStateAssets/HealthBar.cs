@@ -35,7 +35,11 @@ public class HealthBar : VBoxContainer
 
     public override void _Process(float delta)
     {
-        if(alive && Input.IsActionJustPressed("dash"))
+    }
+    
+    public void takeDamage(int dmgPoints)
+    {
+        for (int i = 0; i < dmgPoints; i++)
         {
             HealthOrb orb = (HealthOrb)GetChild(currentOrb);
             
@@ -51,7 +55,8 @@ public class HealthBar : VBoxContainer
                 alive = false;
                 return;
             }
-            
+
+            if(!alive) break;
         }
     }
 }

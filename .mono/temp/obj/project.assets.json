@@ -420,11 +420,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fyuke\\Documents\\Bullfighting Game\\Bullfighting Game.csproj",
+      "projectUniqueName": "C:\\Users\\Fyuke\\Documents\\Toreo\\Bullfighting Game.csproj",
       "projectName": "Bullfighting Game",
-      "projectPath": "C:\\Users\\Fyuke\\Documents\\Bullfighting Game\\Bullfighting Game.csproj",
+      "projectPath": "C:\\Users\\Fyuke\\Documents\\Toreo\\Bullfighting Game.csproj",
       "packagesPath": "C:\\Users\\Fyuke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fyuke\\Documents\\Bullfighting Game\\.mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\Fyuke\\Documents\\Toreo\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fyuke\\AppData\\Roaming\\NuGet\\NuGet.Config"
